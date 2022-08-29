@@ -9,6 +9,7 @@ use std::fs::OpenOptions;
 use fltk::menu::MenuBar;
 use fltk::window::Window;
 use fltk::app::App;
+//add Subsystem and entry to toml
 //trait for save_as
 pub trait Ready{        
 fn convert(c:TextBuffer){}
@@ -38,10 +39,10 @@ fn save_as(a:TextBuffer)->Result<(),nfde::Error>{
         options.write_all(b.as_bytes()).expect("write failed");
          }
         DialogResult::Cancel => {
-    println!("User pressed cancel.");
+        println!("User canceled an action");
         }
          DialogResult::Err(error_str) => {
-        println!("Error: {}", error_str);
+            println!("{}",error_str);
         }
     }
 Ok(())
@@ -69,10 +70,10 @@ fn open(a:TextBuffer,b:PathBuf,c:MenuBar)->Result<(),nfde::Error>{
         kind(b,a,c).expect("Error!");
          }
         DialogResult::Cancel => {
-    println!("User pressed cancel.");
+        println!("User canceled an action");
         }
          DialogResult::Err(error_str) => {
-        println!("Error: {}", error_str);
+            println!("{}",error_str);
         }
     }
 Ok(())
@@ -145,10 +146,10 @@ fn new(a:TextBuffer,b:PathBuf,c:MenuBar)->Result<(),nfde::Error>{
         kind(b,a,c).expect("Error!");
          }
          DialogResult::Cancel => {
-        println!("User pressed cancel.");
+        println!("User canceled an action");
         }
          DialogResult::Err(error_str) => {
-        println!("Error: {}", error_str);
+        println!("{}",error_str);
         }
     }
     Ok(())
@@ -174,7 +175,7 @@ fn main(){
     };
     let h=s.clone();
     let path2=path1.clone();
-    let mut txt=TextEditor::default().with_size(1650,1000).center_of_parent();
+    let mut txt=TextEditor::default().with_size(1800,850).center_of_parent();
     txt.set_buffer(a.clone());
     wind.size_range(5,5,0,0);
     wind.end();
