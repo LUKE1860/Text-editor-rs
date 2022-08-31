@@ -1,3 +1,4 @@
+#![windows_subsystem = "windows"]
 use std::fs::File;
 use std::path::PathBuf;
 use std::io::{prelude::*};
