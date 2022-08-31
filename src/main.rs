@@ -175,7 +175,7 @@ fn main(){
     };
     let h=s.clone();
     let path2=path1.clone();
-    let mut txt=TextEditor::default().with_size(1800,850).center_of_parent();
+    let mut txt=TextEditor::default().with_size(1800,825).center_of_parent();
     txt.set_buffer(a.clone());
     wind.size_range(5,5,0,0);
     wind.end();
