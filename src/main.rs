@@ -108,6 +108,7 @@ e.add(
     });
 }
 //trait for saving a file
+//used in save and new
 pub trait End{
     fn save(a:PathBuf,b:TextBuffer,c:String){}
 }
