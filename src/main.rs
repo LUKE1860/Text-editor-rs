@@ -10,7 +10,6 @@ use std::fs::OpenOptions;
 use fltk::menu::MenuBar;
 use fltk::window::Window;
 use fltk::app::App;
-//add Subsystem and entry to toml
 //trait for save_as
 pub trait Ready{        
 fn convert(c:TextBuffer){}
