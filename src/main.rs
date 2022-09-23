@@ -114,7 +114,7 @@ pub trait End{
     impl End for TextBuffer{
         fn save(a:PathBuf,b:TextBuffer,c:String){
             if c.len()<b.length().try_into().unwrap(){
-                let mut options = OpenOptions::new().append(true).open(a).expect("cannot open file");
+                let mut options = OpenOptions::new().write(true).open(a).expect("cannot open file");
                 options.write_all(b.text().as_bytes()).expect("write failed");
                 }
                 else if c.len()>b.length().try_into().unwrap(){
