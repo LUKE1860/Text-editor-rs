@@ -5,20 +5,16 @@ use fltk::text::{TextBuffer, TextEditor};
 use fltk::window::Window;
 use fltk::{enums::*, prelude::*, *};
 use fltk_theme::{color_themes, ColorTheme};
-use nfde::*;
-use std::fs::File;
-use std::fs::OpenOptions;
-use std::io::prelude::*;
 use std::path::PathBuf;
 use std::env;
 mod buffer;
 //trait for save_as
 
 fn main() {
-    let mut folder = env::current_dir().unwrap();
-    let mut path=PathBuf::from(folder);
-    let mut f_owned_path=path.to_owned();
-    let mut s_owned_path=path.to_owned();
+    let folder = env::current_dir().unwrap();
+    let path=PathBuf::from(folder);
+    let f_owned_path=path.to_owned();
+    let s_owned_path=path.to_owned();
     let app = App::default().with_scheme(app::Scheme::Gtk);
     let mut wind = Window::default()
         .with_label("Text editor")
