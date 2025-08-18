@@ -21,7 +21,6 @@ pub fn new(text: TextBuffer, path: PathBuf, menu: MenuBar) -> Result<(), nfde::E
             read_file_to_open(text, path, menu).expect("Error!");
         }
         DialogResult::Cancel => {
-            println!("User canceled an action");
         }
         DialogResult::Err(error_str) => {
             println!("{}", error_str);
@@ -38,7 +37,6 @@ pub fn new(text: TextBuffer, path: PathBuf, menu: MenuBar) -> Result<(), nfde::E
             .show();
         match res {
             DialogResult::Ok(new_path) => {
-                //let buf2=b.clone();
                 read_file_to_open(buffer,new_path,menu).expect("Error!");
             }
             DialogResult::Cancel => {
